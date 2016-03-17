@@ -3,11 +3,34 @@
 	<head>
 		<title>To-do List Table</title>
 		<meta charset = "utf-8" />
+		<style> 
+		body {
+    			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font-weight: 300;
+			font-size: 12px;
+			}
+		#container {
+    			width: 800px;
+			text-align: center;
+			margin: 20px auto;
+			}
+
+		</style>
 	</head>
 
 	<body>
 		<div id = "container">
 		<h1>To-Do List Table</h1>
+		
+		<input type="textbox" id="txt1" />
+		<input type="button"  value="AddToList"   onclick="addList('ToDoListTable')" />
+
+		<!--create a table to add and delete rows from table-->
+		<table id="ToDoListTable"  width="400px"  border="0" align="center">
+
+		<h4>Total Work pending = <a id="pTotal"></a> </h4>
+		<p>If work is done, check the corresponding box and Press "DeleteFromList"</p>
+		<input type="button"  value="DeleteFromList"    onclick="deleteList('ToDoListTable')" />
 
 		</div>
 	</body>
