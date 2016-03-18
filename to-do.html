@@ -48,6 +48,26 @@
 			document.getElementById('pTotal').innerHTML= numOfRows + 1;
 			}
 		
+		//To delete work done from the ToDoListTable
+		function deleteList(myTable) {
+			var table = document.getElementById(myTable);
+			var numOfRows = table.rows.length;
+			for(var i=0; i<numOfRows; i++) {
+				var row = table.rows[i];
+				var chkbox = row.cells[1].childNodes[0];
+
+			//if checked, delete work completed
+                			if(null != chkbox && true == chkbox.checked) {
+				table.deleteRow(i);
+				numOfRows--;
+				i--;
+
+				document.getElementById('pTotal').innerHTML= numOfRows;
+
+				}
+            			}
+        		}
+			
 		</script>
 	</head>
 
@@ -59,7 +79,7 @@
 		<input type="button"  value="AddToList"   onclick="addList('ToDoListTable')" />
 
 		<!--create a table to add and delete rows from table-->
-		<table id="ToDoListTable"  width="400px"  border="0" align="center">
+		<table id="ToDoListTable"  width="400px"  border="0" align="center"></table>
 
 		<h4>Total Work pending = <a id="pTotal"></a> </h4>
 		<p>If work is done, check the corresponding box and Press "DeleteFromList"</p>
