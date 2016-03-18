@@ -16,6 +16,39 @@
 			}
 
 		</style>
+
+		<script>
+
+		// To add work to-do in the ToDoListTable
+		function addList(myTable) {
+			var table = document.getElementById(myTable);
+			var numOfRows = table.rows.length;
+			var row = table.insertRow(numOfRows);
+
+			//declare a variable to store input text or directly enter to cell content value
+			var b = document.getElementById('txt1').value;
+			var cell1 = row.insertCell(0);
+			var content1 = document.createElement("input");
+			content1.type = "text";
+			content1.style.width = "100%";
+			content1.name = "txtbox[]";
+			content1.value = b;
+
+			cell1.appendChild(content1);
+
+			var cell2 = row.insertCell(1);
+
+			var content2 = document.createElement("input");
+			content2.type = "checkbox";
+			content2.name="chkbox[]";
+			
+			cell2.appendChild(content2);
+
+			document.getElementById('txt1').value=" ";
+			document.getElementById('pTotal').innerHTML= numOfRows + 1;
+			}
+		
+		</script>
 	</head>
 
 	<body>
