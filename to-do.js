@@ -1,3 +1,8 @@
+//Sets default value of Pending task(pTotal) to '0'
+function defaultValue() {
+    document.getElementById('pTotal').innerHTML= '0';
+}
+
 // To add work to-do in the ToDoListTable
 function addList(myTable) {
     var table = document.getElementById(myTable);
