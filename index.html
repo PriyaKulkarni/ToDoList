@@ -1,28 +1,28 @@
 <!doctype HTML>
 <html>
-	<head>
-		<meta charset = "UTF-8">
+    <head>
+        <meta charset = "UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- bootstrap stylesheet -->
         <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
         <title>To-do List Table</title>
-		<style>
+        <style>
             body { font-family: Lora; background-color: #f2f2f2; font-size: 175%; }
             .jumbotron { background-color: black; color: #fff; padding: inherit ; font-style: italic; font-weight: bolder; }
             output { display: inline; }
-		</style>
+        </style>
         <!-- jQuery library -->
         <script type="text/javascript" src="jquery.min.js"></script>
-		<!-- load bootstrap.min.js file-->
+        <!-- load bootstrap.min.js file-->
         <script type="text/javascript" src="bootstrap.min.js"></script>
         <script type="text/javascript" src="to-do.js"></script>
-	</head>
+    </head>
 
-	<body onload="defaultValue();">
-		<div class = "jumbotron container-fluid text-center">
-		  <h2>To-Do List Table</h2>
+    <body onload="defaultValue();">
+        <div class = "jumbotron container-fluid text-center">
+          <h2>To-Do List Table</h2>
         </div>
-		<div class = "container text-center">
+        <div class = "container text-center">
             <form class="form-inline" role= "form" onsubmit="return addList('ToDoListTable');">
                 <input class="form-control" type= "text" id="txt1" placeholder="Enter a to-do" required autofocus oninvalid="this.setCustomValidity('Please enter a to-do here!')" oninput="this.setCustomValidity('')"/>
                 <input class="btn btn-success" type="submit" value="Add to List"/>
@@ -32,11 +32,11 @@
                 <table id="ToDoListTable" align="center" border="0"></table>
 
                 <h4>Pending task(s) = <output id="pTotal"></output></h4>
-                
+
                 <p>[<u><b>Note</b></u>: If work is done, check the corresponding checkbox and Press "Delete from List"]</p>
                 <input class= "btn btn-danger" type="button"  value="Delete from List" onclick="deleteList('ToDoListTable')" />
             </form>
-		</div>
-	</body>
+        </div>
+    </body>
 </html>	
 
