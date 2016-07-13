@@ -1,22 +1,26 @@
 //Sets default value of Pending task(pTotal) to '0'
 function defaultValue() {
+    
     document.getElementById('pTotal').innerHTML= '0';
+    
 }
 
 // To add work to-do in the ToDoListTable
 function addList(myTable) {
+    
     var table = document.getElementById(myTable);
     var numOfRows = table.rows.length;
     var row = table.insertRow(numOfRows);            
 
     //declare a variable to store input text
-    var b = document.getElementById('txt1').value;
+    var input = document.getElementById('txt1').value;
+    
     var cell1 = row.insertCell(0);
     var content1 = document.createElement("input");
     content1.className = "form-control";
     content1.type = "text";
     content1.style = "width: 400px" ;
-    content1.value = b;
+    content1.value = input;
     //append content1
     cell1.appendChild(content1);
 
@@ -28,11 +32,14 @@ function addList(myTable) {
 
     document.getElementById('txt1').value="";
     document.getElementById('pTotal').innerHTML= numOfRows + 1;
+    
     return false;
+    
 }
 
 //To delete work done from the ToDoListTable
 function deleteList(myTable) {
+    
     var table = document.getElementById(myTable);
     var numOfRows = table.rows.length;
     var count = table.rows.length;
@@ -54,6 +61,7 @@ function deleteList(myTable) {
             i--;
         }
     }
+    
     //write number of pending tasks
     document.getElementById('pTotal').innerHTML= numOfRows;
 
@@ -61,4 +69,5 @@ function deleteList(myTable) {
     if ( numOfRows === count) {
         alert("No to-dos selected!\nPlease check corresponding checkboxes of to-dos for deletion.");
     }
+    
 }
